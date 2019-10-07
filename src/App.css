@@ -8,6 +8,7 @@
 
 .row{
   display:flex;
+  cursor: pointer;
 }
 
 .slot{
@@ -17,5 +18,29 @@
   display:flex;
   justify-content: center;
   align-items:center;
+  position: relative
+}
 
+.data {
+  position: absolute;
+  top: 50px;
+  border: 1px solid red;
+  opacity: 0.8;
+  background: lightyellow;
+  margin-top: 3px;
+  visibility: hidden;
+}
+
+.big_data{
+  border: 2px solid green;
+  height: 400px;
+  width: 600px;
+  position:absolute;
+  visibility: hidden;
+  top: 180px;
+  left: 100px;
+}
+
+.visible {
+  visibility: visible;
 }

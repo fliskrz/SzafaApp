@@ -1,25 +1,24 @@
 import React from 'react';
+import '../App.css';
+import Division from './Division';
 
 class Row extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
+    
     render() {
         return (
             <div className='row'>
-              <div className="slot">1</div>
-              <div className="slot">2</div>
-              <div className="slot">3</div>
-              <div className="slot">4</div>
-              <div className="slot">5</div>
-              <div className="slot">6</div>
-              <div className="slot">7</div>
-              <div className="slot">8</div>
-              <div className="slot">9</div>
-              <div className="slot">10</div>
-              <div className="slot">11</div>
-              <div className="slot">12</div>
+                <Division nr={1}/>
+                <Division nr={2}/>
+                <Division nr={3}/>
+                <Division nr={4}/>
+                <Division nr={5}/>
+                <Division nr={6}/>
+                <Division nr={7}/>
+                <Division nr={8}/>
+                <Division nr={9}/>
+                <Division nr={10}/>
+                <Division nr={11}/>
+                <Division nr={12}/>
             </div>
         )
     }
