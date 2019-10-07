@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Row from './components/Row';
+import Segment from './components/Segment';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -12,8 +13,36 @@ class App extends React.Component {
       <div className="App">
         <div className='szafa'>
           <div className="netscale">
-            <Row/>
-            <Row/>
+            <div className='container'>
+              <Segment name='pewnie cos fajnego'/>
+              <Segment/>
+              <Segment/>
+              <Segment/>
+            </div>
+            <div className='container'>
+              <Segment/>
+              <Segment/>
+              <Segment/>
+              <Segment/>
+            </div>
+            <div className='container'>
+              <Segment/>
+              <Segment/>
+              <Segment/>
+              <Segment/>
+            </div>
+            <div className='container'>
+              <Segment/>
+              <Segment/>
+              <Segment/>
+              <Segment/>
+            </div>
+            <div className='container'>
+              <Segment/>
+              <Segment/>
+              <Segment/>
+              <Segment/>
+            </div>            
           </div>
         </div>
       </div>

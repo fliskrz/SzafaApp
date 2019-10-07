@@ -39,7 +39,7 @@ class Division extends React.Component {
             <>
             <div onClick={this.handleClick} onMouseOver={this.handleHover} onMouseOut={this.handleOut} className="slot">
                 <p>{this.props.nr}</p>
-                <div className={this.state.data}>data</div>
+                <div className={this.state.data}>DATA</div>
             </div>
             <div onClick={this.handleClose} className={this.state.big_data}>tu big data</div>
             </>
