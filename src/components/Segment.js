@@ -14,9 +14,11 @@ class Segment extends React.Component {
     handleClick = () => {
         this.setState({
             result: <>
-                        <div className='cover'></div>
-                        <div onClick={this.handleClick} className='segment'>{this.props.name}</div>
-                        <Row/>
+                        {/* <div className='cover'></div> */}
+                        <div className='segment'>{this.props.name}</div>
+                        <div>
+                            <Row name={this.props.name}/>
+                        </div>
                     </>
         })          
 

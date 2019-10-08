@@ -8,32 +8,50 @@
 
 .netscale {
   display:flex;
+  flex-direction:column;
+}
+
+.container {
+  display:flex;
 }
 
 .segment {
   display:flex;
-  height:100px;
+  height:80px;
   width: 200px;
   border: 1px solid black;
   justify-content: center;
   align-items: center;
+  cursor:pointer;
 }
 
 .row{
+  width: 1104px;
   display:flex;
+  flex-wrap: wrap;
   cursor: pointer;
   z-index:2;
-  position: absolute;
-  top:20%;
-  left:50%;
-  margin-top: -35px;
-  margin-left: -420px;
   background-color: #fff;
+  position: absolute;
+  top: 2%;
+  left:50%;
+  margin-left: -552px;
+}
+
+.row p {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size: 30px; 
+}
+
+.row_name{
+  z-index:3;
 }
 
 .slot{
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   border: 1px solid black;
   display:flex;
   justify-content: center;
@@ -44,41 +62,48 @@
   background-repeat: no-repeat;
 }
 
-.data {
-  position: absolute;
-  top: 50px;
-  border: 1px solid yellow;
-  border-radius: 10px;
+.switch_case {
   z-index: 3;
-  background: yellow;
   margin-top:3px;
-  visibility: hidden;
   padding: 5px;
   padding-top: 1px;
+  display:flex;
+}
+
+.switch {
+  border-radius: 20px;
+  width: 100px;
+  height: 60px;
+}
+
+.green {
+  background-color:green;
+}
+
+.red {
+  background-color:red;
 }
 
 .big_data{
   border: 2px solid black;
-  border-radius: 100px;
+  border-radius: 50px;
   height: 400px;
   width: 600px;
   position:absolute;
   visibility: hidden;
-  top: 180px;
+  top: 110%;
   left: 50%;
   margin-left: -300px;
+  background-color: lightyellow;
+  z-index:6;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
+
 }
 
 .visible {
   visibility: visible;
-}
-
-.cover {
-  width:100%;
-  height: 100%;
-  z-index:1;
-  background-color: #fff;
-  position: absolute;
-  top:0;
-  left:0;
 }
