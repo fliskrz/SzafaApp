@@ -17,7 +17,7 @@ class Segment extends React.Component {
                         {/* <div className='cover'></div> */}
                         <div className='segment'>{this.props.name}</div>
                         <div>
-                            <Row name={this.props.name}/>
+                            <Row file={this.props.file} name={this.props.name}/>
                         </div>
                     </>
         })          
