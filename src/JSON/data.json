@@ -5,10 +5,11 @@
         "id": 1,
         "netscale": [
           {
-            "name": 1,
+            "name": "A1",
+            "nr": 1,
             "segment": [
               {
-                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum, mauris vitae lacinia luctus, est tellus ornare ligula, vitae ultricies dui nibh quis dolor. Mauris eu tellus orci. Suspendisse pharetra sapien diam, vel efficitur enim cursus a. Morbi imperdiet eros libero, posuere gravida mi dictum ut. Praesent iaculis scelerisque volutpat.",
+                "data": "data11",
                 "color": "green"
               },
               {
@@ -106,7 +107,8 @@
             ]
           },
           {
-            "name": 2,
+            "name": "A2",
+            "nr": 2,
             "segment": [
               {
                 "data": "data21",
@@ -207,7 +209,8 @@
             ]
           },
           {
-            "name": 3,
+            "name": "A3",
+            "nr": 3,
             "segment": [
               {
                 "data": "data31",
@@ -308,7 +311,8 @@
             ]
           },
           {
-            "name": 4,
+            "name": "A4",
+            "nr": 4,
             "segment": [
               {
                 "data": "data41",
@@ -409,7 +413,8 @@
             ]
           },
           {
-            "name": 5,
+            "name": "A5",
+            "nr": 5,
             "segment": [
               {
                 "data": "data51",
@@ -510,7 +515,8 @@
             ]
           },
           {
-            "name": 6,
+            "name": "B1",
+            "nr": 6,
             "segment": [
               {
                 "data": "data61",
@@ -611,7 +617,8 @@
             ]
           },
           {
-            "name": 7,
+            "name": "B2",
+            "nr": 7,
             "segment": [
               {
                 "data": "data71",
@@ -712,7 +719,8 @@
             ]
           },
           {
-            "name": 8,
+            "name": "B3",
+            "nr": 8,
             "segment": [
               {
                 "data": "data81",
@@ -813,7 +821,8 @@
             ]
           },
           {
-            "name": 9,
+            "name": "B4",
+            "nr": 9,
             "segment": [
               {
                 "data": "data91",
@@ -914,7 +923,8 @@
             ]
           },
           {
-            "name": 10,
+            "name": "B5",
+            "nr": 10,
             "segment": [
               {
                 "data": "data101",
@@ -1015,7 +1025,8 @@
             ]
           },
           {
-            "name": 11,
+            "name": "C1",
+            "nr": 11,
             "segment": [
               {
                 "data": "data111",
@@ -1116,7 +1127,8 @@
             ]
           },
           {
-            "name": 12,
+            "name": "C2",
+            "nr": 12,
             "segment": [
               {
                 "data": "data121",
@@ -1217,7 +1229,8 @@
             ]
           },
           {
-            "name": 13,
+            "name": "C3",
+            "nr": 13,
             "segment": [
               {
                 "data": "data131",
@@ -1318,7 +1331,8 @@
             ]
           },
           {
-            "name": 14,
+            "name": "C4",
+            "nr": 14,
             "segment": [
               {
                 "data": "data141",
@@ -1419,7 +1433,8 @@
             ]
           },
           {
-            "name": 15,
+            "name": "C5",
+            "nr": 15,
             "segment": [
               {
                 "data": "data151",
@@ -1520,7 +1535,8 @@
             ]
           },
           {
-            "name": 16,
+            "name": "D1",
+            "nr": 16,
             "segment": [
               {
                 "data": "data161",
@@ -1621,7 +1637,8 @@
             ]
           },
           {
-            "name": 17,
+            "name": "D2",
+            "nr": 17,
             "segment": [
               {
                 "data": "data171",
@@ -1722,7 +1739,8 @@
             ]
           },
           {
-            "name": 18,
+            "name": "D3",
+            "nr": 18,
             "segment": [
               {
                 "data": "data181",
@@ -1823,7 +1841,8 @@
             ]
           },
           {
-            "name": 19,
+            "name": "D4",
+            "nr": 19,
             "segment": [
               {
                 "data": "data191",
@@ -1924,7 +1943,8 @@
             ]
           },
           {
-            "name": 20,
+            "name": "D5",
+            "nr": 20,
             "segment": [
               {
                 "data": "data201",
