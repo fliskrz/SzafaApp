@@ -34,8 +34,8 @@ class Row extends React.Component {
         return (
             <div>
                 <div className='row'>
-                    <div style={{width:'1034px', height:'170px'}}></div>
-                    <h2 style={{width:'1034px', height:'auto'}}>{this.props.name}</h2>
+                    <div style={{width:'1010px', height:'170px'}}></div>
+                    <h2 style={{width:'1010px', height:'auto'}}>{this.props.name}</h2>
                     <div onClick={this.handleClick} style={styles}>X</div>
                     {top}
                     {bot}

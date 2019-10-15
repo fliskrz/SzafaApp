@@ -1,13 +1,5 @@
 *{
   box-sizing: border-box;
-  /* background: rgba(255,255,255,1);
-  background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(205,204,255,1) 0%, rgba(255,255,255,1) 52%, rgba(215,214,255,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(0%, rgba(205,204,255,1)), color-stop(52%, rgba(255,255,255,1)), color-stop(100%, rgba(215,214,255,1)));
-  background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(205,204,255,1) 0%, rgba(255,255,255,1) 52%, rgba(215,214,255,1) 100%);
-  background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(205,204,255,1) 0%, rgba(255,255,255,1) 52%, rgba(215,214,255,1) 100%);
-  background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(205,204,255,1) 0%, rgba(255,255,255,1) 52%, rgba(215,214,255,1) 100%);
-  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(205,204,255,1) 0%, rgba(255,255,255,1) 52%, rgba(215,214,255,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d7d6ff', GradientType=1 ); */
 }
 
 #root{
@@ -59,7 +51,7 @@
 }
 
 .row{
-  width: 1104px;
+  width: 1080px;
   display:flex;
   flex-wrap: wrap;
   cursor: pointer;
@@ -95,6 +87,28 @@
   cursor: pointer;
 }
 
+.big_data{
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 400px;
+  width: 600px;
+  position:absolute;
+  visibility: hidden;
+  top: 110%;
+  left: 50%;
+  margin-left: -300px;
+  background-color: rgb(223, 226, 226);
+  z-index:6;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
+  padding-left:10px;
+  padding-right:10px;
+  cursor: default;
+}
+
 .switch_case {
   width:100%;
   z-index: 3;
@@ -105,9 +119,9 @@
 }
 
 .switch {
-  border-radius: 20px;
+  border-radius: 5px;
   width: 100px;
-  height: 60px;
+  height: 40px;
 }
 
 .green {
@@ -122,30 +136,31 @@
   margin-bottom: 15px;
 }
 
-.big_data{
-  border: 2px solid black;
-  border-radius: 50px;
-  height: 400px;
-  width: 600px;
-  position:absolute;
-  visibility: hidden;
-  top: 110%;
-  left: 50%;
-  margin-left: -300px;
-  background-color: lightyellow;
-  z-index:6;
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 25px;
-  padding-left:10px;
-  padding-right:10px;
-  cursor: default;
-}
-
 .big_data button {
   cursor:pointer;
+}
+
+.edit, .confirm{
+  border:none;
+  background-color: rgb(223, 226, 226);
+  background-size:cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.edit {
+  background-image: url(./images/edit.png);
+}
+
+.confirm{
+  background-image: url(./images/confirm.png);
+}
+
+.name{
+  width:20px;
+  height: 20px;
 }
 
 p.data {
@@ -155,14 +170,17 @@ p.data {
   align-items: flex-start;;
   font-size: 16px;
   width: 90%;
+  margin: 0;
 }
+
 
 .visible {
   visibility: visible;
 }
 
 .input {
-  width: 100%;
+  width: 90%;
   height:100%;
+  font-size: 16px;
 }
 

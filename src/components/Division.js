@@ -98,7 +98,7 @@ class Division extends React.Component {
     handleEdit = (e) => {
         let input = document.createElement('textarea');
         let confirm = document.createElement('button');
-        confirm.innerHTML = 'Confirm';
+        confirm.className = 'confirm';
         input.className = 'input';
         let file = this.state.file;
         input.value = this.state.file[0].netscale[this.props.segment_nr-1].segment[this.props.nr-1].data;
@@ -154,10 +154,14 @@ class Division extends React.Component {
             </button>
             <div className={this.state.big_data}>
                 <div onClick={this.handleClose} style={styles}>X</div>
-                <p>{this.props.nr <= 12 ? this.props.nr : this.props.nr - 12}</p>
+                <p style={{backgroundColor: 'rgb(223, 226, 226)'}}>
+                    {this.props.nr <= 12 ? this.props.nr : this.props.nr - 12}
+                    <span>&nbsp;{this.state.file[0].netscale[segment_nr].segment[this.props.nr-1].name}&nbsp;</span>
+                    <button className='edit name'></button>
+                </p>
                 <p className='data'>{this.state.file[0].netscale[segment_nr].segment[this.props.nr-1].data}</p>
-                <div>
-                    <button onClick={this.handleEdit} className='edit'>Edit</button>
+                <div style={{backgroundColor: 'rgb(223, 226, 226)'}}>
+                    <button onClick={this.handleEdit} className='edit'></button>
                 </div>
                 <div className={this.state.switch_case}>
                     <div>
