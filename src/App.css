@@ -158,9 +158,15 @@
   background-image: url(./images/confirm.png);
 }
 
-.name{
+.edit_name{
   width:20px;
   height: 20px;
+}
+
+.name{
+  min-width: 150px;
+  max-width: 300px;
+  font-size: 22px;
 }
 
 p.data {

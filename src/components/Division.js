@@ -98,22 +98,23 @@ class Division extends React.Component {
     handleEdit = (e) => {
         let input = document.createElement('textarea');
         let confirm = document.createElement('button');
+        let edit = e.currentTarget;
         confirm.className = 'confirm';
         input.className = 'input';
         let file = this.state.file;
         input.value = this.state.file[0].netscale[this.props.segment_nr-1].segment[this.props.nr-1].data;
-        e.currentTarget.parentElement.parentElement.removeChild(e.currentTarget.parentElement.previousElementSibling);
-        e.currentTarget.parentElement.parentElement.insertBefore(input, e.currentTarget.parentElement);
-        e.currentTarget.parentElement.insertBefore(confirm, e.currentTarget.nextElementSiblign);
-        e.currentTarget.disabled = true;
+        edit.parentElement.parentElement.removeChild(edit.parentElement.previousElementSibling);
+        edit.parentElement.parentElement.insertBefore(input, edit.parentElement);
+        edit.parentElement.insertBefore(confirm, edit.nextElementSiblign);
+        edit.parentElement.removeChild(edit);
         confirm.addEventListener('click', (e) => {
-            e.currentTarget.previousElementSibling.disabled = false;
             let p = document.createElement('p');
             p.innerHTML = e.currentTarget.parentElement.previousElementSibling.value;
             file[0].netscale[this.props.segment_nr-1].segment[this.props.nr-1].data = e.currentTarget.parentElement.previousElementSibling.value;
             p.className = 'data';
             e.currentTarget.parentElement.parentElement.removeChild(e.currentTarget.parentElement.previousElementSibling);
             e.currentTarget.parentElement.parentElement.insertBefore(p, e.currentTarget.parentElement);
+            e.currentTarget.parentElement.appendChild(edit);
             e.currentTarget.parentElement.removeChild(e.currentTarget);
             this.setState({
                 file: file
@@ -123,7 +124,40 @@ class Division extends React.Component {
                 resolve(res.data)
             })
         });
+    }
 
+
+    //editing slot name in data popup and sending it to API
+    handleNameEdit = (e) => {
+        let edit = e.currentTarget;
+        let input = document.createElement('input');
+        let confirm = document.createElement('button');
+        let file = this.state.file;
+        confirm.className = 'confirm edit_name';
+        input.type = 'text';
+        input.className = 'name';
+        input.value = edit.previousElementSibling.innerText;
+        edit.parentElement.removeChild(edit.previousElementSibling);
+        edit.parentElement.insertBefore(input, edit);
+        edit.parentElement.appendChild(confirm);
+        edit.parentElement.removeChild(edit);
+        confirm.addEventListener('click', (e) => {
+            let span = document.createElement('span');
+            span.innerText =e.currentTarget.previousElementSibling.value;
+            file[0].netscale[this.props.segment_nr-1].segment[this.props.nr-1].name = span.innerText;
+            span.className = 'name';
+            e.currentTarget.parentElement.removeChild(e.currentTarget.previousElementSibling);
+            e.currentTarget.parentElement.insertBefore(span, e.currentTarget);
+            e.currentTarget.parentElement.appendChild(edit);
+            e.currentTarget.parentElement.removeChild(e.currentTarget);
+            this.setState({
+                file: file
+            })
+            axios.put(`http://localhost:3000/szafa/1/`, file)
+            .then((res) => {
+                resolve(res.data)
+            })
+        })
     }
 
     //assigning correct colors from the API to correct slot buttons
@@ -155,9 +189,9 @@ class Division extends React.Component {
             <div className={this.state.big_data}>
                 <div onClick={this.handleClose} style={styles}>X</div>
                 <p style={{backgroundColor: 'rgb(223, 226, 226)'}}>
-                    {this.props.nr <= 12 ? this.props.nr : this.props.nr - 12}
-                    <span>&nbsp;{this.state.file[0].netscale[segment_nr].segment[this.props.nr-1].name}&nbsp;</span>
-                    <button className='edit name'></button>
+                    {this.props.nr <= 12 ? this.props.nr : this.props.nr - 12}{'.'}
+                    <span className='name'>&nbsp;{this.state.file[0].netscale[segment_nr].segment[this.props.nr-1].name}&nbsp;</span>
+                    <button onClick={this.handleNameEdit} className='edit edit_name'></button>
                 </p>
                 <p className='data'>{this.state.file[0].netscale[segment_nr].segment[this.props.nr-1].data}</p>
                 <div style={{backgroundColor: 'rgb(223, 226, 226)'}}>
