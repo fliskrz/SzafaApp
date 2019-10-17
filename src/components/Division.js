@@ -24,6 +24,7 @@ class Division extends React.Component {
             busy: 'busy',
             file: this.props.file,          //data from the API call
             slot: 'slot',                   //class with styles for the one cable slot button
+            hover: 'hover'                  //class with styles for hover popup
         }
         
     }
@@ -160,6 +161,18 @@ class Division extends React.Component {
         })
     }
 
+    handleHover = () => {
+        this.setState({
+            hover: 'hover visible'
+        })
+    }
+
+    handleOut = () => {
+        this.setState({
+            hover: 'hover'
+        })
+    }
+
     //assigning correct colors from the API to correct slot buttons
     //adding listener for ESC key
     componentDidMount() {
@@ -184,7 +197,8 @@ class Division extends React.Component {
         return (
             <>
             <button data-segment={this.props.segment_nr} data-row={this.props.row} data-slot={this.props.nr} onClick={this.handleClick} onMouseOver={this.handleHover} onMouseOut={this.handleOut} className={this.state.slot}>
-                {this.props.nr <= 12 ? this.props.nr : this.props.nr - 12}
+                <span>{this.props.nr <= 12 ? this.props.nr : this.props.nr - 12}</span>
+                <div className={this.state.hover}>{this.state.file[0].netscale[segment_nr].segment[this.props.nr-1].name}</div>
             </button>
             <div className={this.state.big_data}>
                 <div onClick={this.handleClose} style={styles}>X</div>
