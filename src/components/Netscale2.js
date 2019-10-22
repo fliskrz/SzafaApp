@@ -11,7 +11,7 @@ class Netscale extends React.Component {
   }
 
   componentDidMount () {
-    axios.get(`http://localhost:3000/szafa/1`)
+    axios.get(`http://localhost:3000/szafa/2`)
       .then((res) => {
         this.setState({
           file:res.data
@@ -28,10 +28,10 @@ class Netscale extends React.Component {
             d_row = [];
         
         for(let i=0; i<5; i++){
-            a_row.push(<Segment index={0} key={i} file={this.state.file} name={this.state.file[0].netscale[i].name} nr={this.state.file[0].netscale[i].nr}/>);
-            b_row.push(<Segment index={0} key={i+5} file={this.state.file} name={this.state.file[0].netscale[i+5].name} nr={this.state.file[0].netscale[i+5].nr}/>);
-            c_row.push(<Segment index={0} key={i+10} file={this.state.file} name={this.state.file[0].netscale[i+10].name} nr={this.state.file[0].netscale[i+10].nr}/>);
-            d_row.push(<Segment index={0} key={i+15} file={this.state.file} name={this.state.file[0].netscale[i+15].name} nr={this.state.file[0].netscale[i+15].nr}/>);
+            a_row.push(<Segment index={1} key={i} file={this.state.file} name={this.state.file[1].netscale[i].name} nr={this.state.file[1].netscale[i].nr}/>);
+            b_row.push(<Segment index={1} key={i+5} file={this.state.file} name={this.state.file[1].netscale[i+5].name} nr={this.state.file[1].netscale[i+5].nr}/>);
+            c_row.push(<Segment index={1} key={i+10} file={this.state.file} name={this.state.file[1].netscale[i+10].name} nr={this.state.file[1].netscale[i+10].nr}/>);
+            d_row.push(<Segment index={1} key={i+15} file={this.state.file} name={this.state.file[1].netscale[i+15].name} nr={this.state.file[1].netscale[i+15].nr}/>);
         }
         
 

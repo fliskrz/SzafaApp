@@ -2,19 +2,32 @@
   box-sizing: border-box;
 }
 
+button:focus, input:focus, textarea:focus {
+  outline:none;
+}
+
 #root{
   display:flex;
   justify-content:center;
+  height:100vh;
+  width:100vw;
 }
 
 .App {
+  position: fixed;
+  top:200px;
   text-align: center;
   display:flex;
   justify-content: center;
-  align-items:center;
   margin-top: 30px;
   flex-direction: column;
   max-width:1002px;
+}
+
+.header {
+  position:fixed;
+  top:0;
+  left:0;
 }
 
 .logo {
@@ -27,6 +40,40 @@
   cursor: pointer;
   display:flex;
   align-self:flex-end;
+}
+
+.nav_top {
+  position:fixed;
+  top:100px;
+  left:0;
+  display:flex;
+}
+
+.szafa_button {
+  border:none;
+  background-color: white;
+  background-image: url('./images/server.png');
+  height:128px;
+  width:128px;
+  background-position: center;
+  background-size: contain;
+  cursor:pointer;
+  font-size: 17px;
+  color:green;
+  font-weight:bold;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.szafa_button p {
+  margin-top: 0.6em;
+}
+
+.components_menu {
+  display:flex;
+  flex-direction: column;
 }
 
 .netscale {
@@ -58,7 +105,7 @@
   z-index:2;
   background-color: #fff;
   position: absolute;
-  top: 2%;
+  top: 50%;
   left:50%;
   margin-left: -552px;
 }

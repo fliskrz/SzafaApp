@@ -179,7 +179,7 @@ class Division extends React.Component {
         document.addEventListener("keydown", this.handleCloseKey);
         this.assignColors = (() =>
             this.setState({
-                slot:  'slot ' + this.state.file[0].netscale[this.props.segment_nr-1].segment[this.props.nr-1].color
+                slot:  'slot ' + this.state.file[this.props.index].netscale[this.props.segment_nr-1].segment[this.props.nr-1].color
         }))()       
     }
 
@@ -198,16 +198,16 @@ class Division extends React.Component {
             <>
             <button data-segment={this.props.segment_nr} data-row={this.props.row} data-slot={this.props.nr} onClick={this.handleClick} onMouseOver={this.handleHover} onMouseOut={this.handleOut} className={this.state.slot}>
                 <span>{this.props.nr <= 12 ? this.props.nr : this.props.nr - 12}</span>
-                <div className={this.state.hover}>{this.state.file[0].netscale[segment_nr].segment[this.props.nr-1].name}</div>
+                <div className={this.state.hover}>{this.state.file[this.props.index].netscale[segment_nr].segment[this.props.nr-1].name}</div>
             </button>
             <div className={this.state.big_data}>
                 <div onClick={this.handleClose} style={styles}>X</div>
                 <p style={{backgroundColor: 'rgb(223, 226, 226)'}}>
                     {this.props.nr <= 12 ? this.props.nr : this.props.nr - 12}{'.'}
-                    <span className='name'>&nbsp;{this.state.file[0].netscale[segment_nr].segment[this.props.nr-1].name}&nbsp;</span>
+                    <span className='name'>&nbsp;{this.state.file[this.props.index].netscale[segment_nr].segment[this.props.nr-1].name}&nbsp;</span>
                     <button onClick={this.handleNameEdit} className='edit edit_name'></button>
                 </p>
-                <p className='data'>{this.state.file[0].netscale[segment_nr].segment[this.props.nr-1].data}</p>
+                <p className='data'>{this.state.file[this.props.index].netscale[segment_nr].segment[this.props.nr-1].data}</p>
                 <div style={{backgroundColor: 'rgb(223, 226, 226)'}}>
                     <button onClick={this.handleEdit} className='edit'></button>
                 </div>
