@@ -7,7 +7,7 @@ class Comp2 extends React.Component {
     }
     render() {
         return (
-            <h2>Component 2</h2>
+            <h2>Component sadasd2</h2>
         )
     }
 }

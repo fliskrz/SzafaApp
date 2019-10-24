@@ -6,22 +6,10 @@ button:focus, input:focus, textarea:focus {
   outline:none;
 }
 
-#root{
-  display:flex;
-  justify-content:center;
-  height:100vh;
-  width:100vw;
-}
-
 .App {
-  position: fixed;
-  top:200px;
-  text-align: center;
-  display:flex;
-  justify-content: center;
-  margin-top: 30px;
-  flex-direction: column;
-  max-width:1002px;
+  margin: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .header {
@@ -31,6 +19,7 @@ button:focus, input:focus, textarea:focus {
 }
 
 .logo {
+  border:none;
   width:256px;
   height:74px;
   background-image: url("./images/logo.png");
@@ -40,13 +29,6 @@ button:focus, input:focus, textarea:focus {
   cursor: pointer;
   display:flex;
   align-self:flex-end;
-}
-
-.nav_top {
-  position:fixed;
-  top:100px;
-  left:0;
-  display:flex;
 }
 
 .szafa_button {
@@ -59,7 +41,7 @@ button:focus, input:focus, textarea:focus {
   background-size: contain;
   cursor:pointer;
   font-size: 17px;
-  color:green;
+  color:blue;
   font-weight:bold;
   display:flex;
   flex-direction: column;
@@ -71,15 +53,35 @@ button:focus, input:focus, textarea:focus {
   margin-top: 0.6em;
 }
 
-.components_menu {
+.szafa {
   display:flex;
-  flex-direction: column;
 }
 
-.netscale {
+.szafa_menu{
   display:flex;
-  flex-direction:column;
-  border: 1px solid black;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.szafa_menu h2 {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.segment_1U {
+  height: 20px;
+  width: 240px;
+} 
+
+.segment_2U {
+  height: 40px;
+  width: 240px;
+}
+
+.segment_3U {
+  height: 60px;
+  width: 240px;
 }
 
 .container {
@@ -89,12 +91,18 @@ button:focus, input:focus, textarea:focus {
 .segment {
   background:rgba(255,255,255,0);
   display:flex;
-  height:80px;
+  height:50px;
   width: 200px;
   border: 1px solid black;
   justify-content: center;
   align-items: center;
   cursor:pointer;
+  font-weight:bold;
+  font-size: 24px;
+}
+
+.netscale{
+  position:relative;
 }
 
 .row{
@@ -105,9 +113,8 @@ button:focus, input:focus, textarea:focus {
   z-index:2;
   background-color: #fff;
   position: absolute;
-  top: 50%;
-  left:50%;
-  margin-left: -552px;
+  top: 100%;
+  left: 0;
 }
 
 .row p {
@@ -173,6 +180,7 @@ button:focus, input:focus, textarea:focus {
   padding-left:10px;
   padding-right:10px;
   cursor: default;
+  margin-bottom: 100px;
 }
 
 .switch_case {

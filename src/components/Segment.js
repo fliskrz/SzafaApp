@@ -13,15 +13,22 @@ class Segment extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            open: false
+            open: false,
+            disabled: false
         }
 
     }
 
     //this function pops out slots screen (24 slot buttons)
-    handleClick = () => {
+    handleClick = (e) => {
+        let segments = e.currentTarget.parentElement.parentElement.querySelectorAll('.segment');
+        segments.forEach((e) => {
+            e.disabled = !this.state.disabled;
+        })
+        e.currentTarget.disabled = false;
         this.setState({
-            open: !this.state.open
+            open: !this.state.open,
+            disabled: !this.state.disabled
         })          
 
     }
@@ -30,16 +37,14 @@ class Segment extends React.Component {
         if(this.state.open){
             return (<>
                         {/* <div className='cover'></div> */}
-                        <div onClick={this.handleClick} className='segment'>
-                            <h2>CLOSE</h2>
-                        </div>
+                        <button onClick={this.handleClick} className='segment'>CLOSE</button>
                         <div>
                             <Row index={this.props.index} file={this.props.file} name={this.props.name} nr={this.props.nr}/>
                         </div>
                     </>
             )       
         }else{
-            return <div onClick={this.handleClick} className='segment'><h2>{this.props.name}</h2></div>
+            return <button onClick={this.handleClick} className='segment'>{this.props.name}</button>
         }
     }
 }

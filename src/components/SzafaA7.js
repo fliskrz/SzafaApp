@@ -1,41 +1,28 @@
-import React from 'react';
 import '../App.css';
-import Netscale from './Netscale';
-import Netscale2 from './Netscale2';
+import React from "react";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  withRouter,
-  history
+  useRouteMatch,
 } from "react-router-dom";
 import LinkButton from './LinkButton';
+import Netscale from './Netscale';
+import Netscale2 from './Netscale2';
 
-class SzafaA7 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      file: ''
-    }
-  }
-
-  render() {
-      return (
-        <div>
-          <h2>TU BEDZIE STAŁA SZAFA A7</h2>
-          <Router>          
-            <div className='components_menu'>
-              <LinkButton to='/A7/netscale'>Netscale</LinkButton>
-              <LinkButton to='/A7/netscale2'>Netscale</LinkButton>
-            </div>
-            <Switch>
-              <Route path='/A7/netscale' component={Netscale}/>
-              <Route path='/A7/netscale2' component={Netscale2}/>
-            </Switch>
-          </Router>
+export default function SzafaA7() {
+    let { path, url } = useRouteMatch();
+  
+    return (
+      <div className='szafa'>
+        <div className='szafa_menu'>
+          <h2>A7</h2>
+          <LinkButton className='segment_3U' to={`${url}/netscale`}>Netscale</LinkButton>
+          <LinkButton className='segment_3U' to={`${url}/netscale2`}>Netscale2</LinkButton>
         </div>
-      )
+        <Switch>
+          <Route path={`${path}/netscale`} component={Netscale}/>
+          <Route path={`${path}/netscale2`} component={Netscale2}/>
+        </Switch>
+      </div>
+    );
   }
-}
-export default SzafaA7;
