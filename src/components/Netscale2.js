@@ -37,6 +37,7 @@ class Netscale extends React.Component {
 
         return (
             <div className="netscale">
+              <h2>Netscale 2</h2>
               <div className='container'>
                 {a_row}
               </div>

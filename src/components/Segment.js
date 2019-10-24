@@ -36,7 +36,6 @@ class Segment extends React.Component {
     render() {
         if(this.state.open){
             return (<>
-                        {/* <div className='cover'></div> */}
                         <button onClick={this.handleClick} className='segment'>CLOSE</button>
                         <div>
                             <Row index={this.props.index} file={this.props.file} name={this.props.name} nr={this.props.nr}/>

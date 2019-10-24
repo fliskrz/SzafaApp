@@ -22,20 +22,19 @@ import SzafaA7 from './components/SzafaA7';
 export default function App() {
   return (
     <Router>
-      <div className='App'>     
-        <Link className='logo' to="/"/>
-        <div style={{display:'flex'}}>         
-          <LinkButton className='szafa_button' to="/A7"><p>Szafa A7</p></LinkButton>          
-          <LinkButton className='szafa_button' to="/A6"><p>Szafa A6</p></LinkButton>
-          <LinkButton className='szafa_button' to="/A5"><p>Szafa A5</p></LinkButton>
-          <LinkButton className='szafa_button' to="/A4"><p>Szafa A4</p></LinkButton>
-          <LinkButton className='szafa_button' to="/A3"><p>Szafa A3</p></LinkButton>
-          <LinkButton className='szafa_button' to="/A2"><p>Szafa A2</p></LinkButton>
-          <LinkButton className='szafa_button' to="/A1"><p>Szafa A1</p></LinkButton>
+      <div className='App'>
+        <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+          <Link className='logo' to="/"/>
+          <div style={{display:'flex'}}>         
+            <LinkButton className='szafa_button' to="/A7"><p>Szafa A7</p></LinkButton>          
+            <LinkButton className='szafa_button' to="/A6"><p>Szafa A6</p></LinkButton>
+            <LinkButton className='szafa_button' to="/A5"><p>Szafa A5</p></LinkButton>
+            <LinkButton className='szafa_button' to="/A4"><p>Szafa A4</p></LinkButton>
+            <LinkButton className='szafa_button' to="/A3"><p>Szafa A3</p></LinkButton>
+            <LinkButton className='szafa_button' to="/A2"><p>Szafa A2</p></LinkButton>
+            <LinkButton className='szafa_button' to="/A1"><p>Szafa A1</p></LinkButton>
+          </div>
         </div>
-
-        <hr />
-
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/A7" component={SzafaA7}/>

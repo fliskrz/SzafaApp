@@ -62,9 +62,9 @@ class Division extends React.Component {
     //changing slot color to green
     makeGreen = (e) => {
         let file = this.state.file;
-        file[0].netscale[this.props.segment_nr-1].segment[this.props.nr-1].color = 'green';
+        file[this.props.index].netscale[this.props.segment_nr-1].segment[this.props.nr-1].color = 'green';
 
-        axios.put(`http://localhost:3000/szafa/1/`, file)
+        axios.put(`http://localhost:3000/szafa/${this.props.index + 1}/`, file)
             .then((res) => {
                 resolve(res.data)
             })
@@ -80,9 +80,9 @@ class Division extends React.Component {
     //changing slot color to red
     makeRed = (e) => {
         let file = this.state.file;
-        file[0].netscale[this.props.segment_nr-1].segment[this.props.nr-1].color = 'red';
+        file[this.props.index].netscale[this.props.segment_nr-1].segment[this.props.nr-1].color = 'red';
 
-        axios.put(`http://localhost:3000/szafa/1/`, file)
+        axios.put(`http://localhost:3000/szafa/${this.props.index + 1}/`, file)
             .then((res) => {
                 resolve(res.data)
             })
@@ -103,7 +103,7 @@ class Division extends React.Component {
         confirm.className = 'confirm';
         input.className = 'input';
         let file = this.state.file;
-        input.value = this.state.file[0].netscale[this.props.segment_nr-1].segment[this.props.nr-1].data;
+        input.value = this.state.file[this.props.index].netscale[this.props.segment_nr-1].segment[this.props.nr-1].data;
         edit.parentElement.parentElement.removeChild(edit.parentElement.previousElementSibling);
         edit.parentElement.parentElement.insertBefore(input, edit.parentElement);
         edit.parentElement.insertBefore(confirm, edit.nextElementSiblign);
@@ -111,7 +111,7 @@ class Division extends React.Component {
         confirm.addEventListener('click', (e) => {
             let p = document.createElement('p');
             p.innerHTML = e.currentTarget.parentElement.previousElementSibling.value;
-            file[0].netscale[this.props.segment_nr-1].segment[this.props.nr-1].data = e.currentTarget.parentElement.previousElementSibling.value;
+            file[this.props.index].netscale[this.props.segment_nr-1].segment[this.props.nr-1].data = e.currentTarget.parentElement.previousElementSibling.value;
             p.className = 'data';
             e.currentTarget.parentElement.parentElement.removeChild(e.currentTarget.parentElement.previousElementSibling);
             e.currentTarget.parentElement.parentElement.insertBefore(p, e.currentTarget.parentElement);
@@ -120,7 +120,7 @@ class Division extends React.Component {
             this.setState({
                 file: file
             })
-            axios.put(`http://localhost:3000/szafa/1/`, file)
+            axios.put(`http://localhost:3000/szafa/${this.props.index + 1}/`, file)
             .then((res) => {
                 resolve(res.data)
             })
@@ -145,7 +145,7 @@ class Division extends React.Component {
         confirm.addEventListener('click', (e) => {
             let span = document.createElement('span');
             span.innerText =e.currentTarget.previousElementSibling.value;
-            file[0].netscale[this.props.segment_nr-1].segment[this.props.nr-1].name = span.innerText;
+            file[this.props.index].netscale[this.props.segment_nr-1].segment[this.props.nr-1].name = span.innerText;
             span.className = 'name';
             e.currentTarget.parentElement.removeChild(e.currentTarget.previousElementSibling);
             e.currentTarget.parentElement.insertBefore(span, e.currentTarget);
@@ -154,7 +154,7 @@ class Division extends React.Component {
             this.setState({
                 file: file
             })
-            axios.put(`http://localhost:3000/szafa/1/`, file)
+            axios.put(`http://localhost:3000/szafa/${this.props.index + 1}/`, file)
             .then((res) => {
                 resolve(res.data)
             })
@@ -197,7 +197,7 @@ class Division extends React.Component {
         return (
             <>
             <button data-segment={this.props.segment_nr} data-row={this.props.row} data-slot={this.props.nr} onClick={this.handleClick} onMouseOver={this.handleHover} onMouseOut={this.handleOut} className={this.state.slot}>
-                <span>{this.props.nr <= 12 ? this.props.nr : this.props.nr - 12}</span>
+                {this.props.nr <= 12 ? this.props.nr : this.props.nr - 12}
                 <div className={this.state.hover}>{this.state.file[this.props.index].netscale[segment_nr].segment[this.props.nr-1].name}</div>
             </button>
             <div className={this.state.big_data}>

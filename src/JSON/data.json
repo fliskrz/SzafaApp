@@ -9,8 +9,8 @@
             "nr": 1,
             "segment": [
               {
-                "name": "name",
-                "data": "data",
+                "name": "dupa",
+                "data": "dupadupa",
                 "color": "green"
               },
               {
@@ -2537,8 +2537,8 @@
             "nr": 1,
             "segment": [
               {
-                "name": "name",
-                "data": "data11",
+                "name": "dupa2",
+                "data": "dupadupa2",
                 "color": "green"
               },
               {

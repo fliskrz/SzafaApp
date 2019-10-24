@@ -2,14 +2,24 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 button:focus, input:focus, textarea:focus {
   outline:none;
+}
+
+#root {
+  display:flex;
+  justify-content: center;
 }
 
 .App {
   margin: 50px;
   margin-left: 50px;
   margin-right: 50px;
+  width:1060px;
 }
 
 .header {
@@ -27,8 +37,6 @@ button:focus, input:focus, textarea:focus {
   background-repeat: no-repeat;
   background-color: rgba(255,255,255,1);
   cursor: pointer;
-  display:flex;
-  align-self:flex-end;
 }
 
 .szafa_button {
@@ -92,7 +100,7 @@ button:focus, input:focus, textarea:focus {
   background:rgba(255,255,255,0);
   display:flex;
   height:50px;
-  width: 200px;
+  width: 160px;
   border: 1px solid black;
   justify-content: center;
   align-items: center;
@@ -106,7 +114,7 @@ button:focus, input:focus, textarea:focus {
 }
 
 .row{
-  width: 1080px;
+  width: 780px;
   display:flex;
   flex-wrap: wrap;
   cursor: pointer;
@@ -114,7 +122,7 @@ button:focus, input:focus, textarea:focus {
   background-color: #fff;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: calc(50% - 390px);
 }
 
 .row p {
@@ -128,8 +136,8 @@ button:focus, input:focus, textarea:focus {
 }
 
 .slot{
-  width: 90px;
-  height: 90px;
+  width: 65px;
+  height: 65px;
   border: 1px solid black;
   position: relative;
   background-image: url("./images/port.png");
@@ -139,11 +147,12 @@ button:focus, input:focus, textarea:focus {
   display:flex;
   justify-content: center;
   align-items:center;
-}
-
-.slot span {
   font-weight: bold;
   color: white;
+}
+
+.slot:disabled {
+  color:grey
 }
 
 .hover{
@@ -157,6 +166,7 @@ button:focus, input:focus, textarea:focus {
   width:auto;
   visibility:hidden;
   background-color: rgb(211, 255, 255);
+  color:black;
 }
 
 
