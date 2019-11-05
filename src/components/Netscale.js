@@ -2,12 +2,14 @@ import React from 'react';
 import '../App.css';
 import Segment from './Segment';
 import axios from 'axios';
+import { resolve } from 'q';
 
 
 class Netscale extends React.Component {
 
   state = {
-    file: ''
+    file: '',
+    test: ''
   }
 
   componentDidMount () {
@@ -18,6 +20,8 @@ class Netscale extends React.Component {
         })
       })
   }
+
+
 
     render() {
 

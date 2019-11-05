@@ -9,6 +9,8 @@ import {
   useRouteMatch,
   matchPath
 } from "react-router-dom";
+import axios from 'axios';
+import { ExportCSV } from './components/ExportCSV';
 import LinkButton from './components/LinkButton';
 import NotFound from './components/NotFound';
 import SzafaA1 from './components/SzafaA1';
@@ -20,9 +22,19 @@ import SzafaA6 from './components/SzafaA6';
 import SzafaA7 from './components/SzafaA7';
 
 export default function App() {
+
+  let file_data = '';
+  
+  axios.get(`http://localhost:3003/szafa/`)
+  .then((res) => {
+    file_data = res.data;
+    console.log(file_data);  //tego foramtu nie czyta
+  })
+
   return (
     <Router>
       <div className='App'>
+      <ExportCSV csvData={[{"id":1},{"id":2}]} fileName='plik' />
         <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
           <Link className='logo' to="/"/>
           <div style={{display:'flex'}}>         
