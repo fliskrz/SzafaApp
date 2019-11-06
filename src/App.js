@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, {useState} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,18 +23,19 @@ import SzafaA7 from './components/SzafaA7';
 
 export default function App() {
 
-  let file_data = '';
+  const [file_data, setFile_data] = useState(0);
   
-  axios.get(`http://localhost:3003/szafa/`)
+  axios.get(`http://localhost:3001/szafa/`)
   .then((res) => {
-    file_data = res.data;
-    console.log(file_data);  //tego foramtu nie czyta
+    setFile_data(res.data);
+    //file_data = Array.from(res.data);
+    //tego formatu nie czyta
   })
 
   return (
     <Router>
       <div className='App'>
-      <ExportCSV csvData={[{"id":1},{"id":2}]} fileName='plik' />
+      <ExportCSV csvData={file_data} fileName='plik' />
         <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
           <Link className='logo' to="/"/>
           <div style={{display:'flex'}}>         
