@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import '../App.css';
 import Row from './Row';
 
@@ -38,7 +38,7 @@ class Segment extends React.Component {
             return (<>
                         <button onClick={this.handleClick} className='segment'>CLOSE</button>
                         <div>
-                            <Row index={this.props.index} file={this.props.file} name={this.props.name} nr={this.props.nr}/>
+                            <Row index={this.props.index} id={this.props.id} file={this.props.file} name={this.props.name} nr={this.props.nr}/>
                         </div>
                     </>
             )       

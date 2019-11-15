@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,15 +23,15 @@ import SzafaA7 from './components/SzafaA7';
 
 export default function App() {
 
-  const [file_data, setFile_data] = useState(0);
-  
-  axios.get(`http://localhost:3001/szafa/`)
-  .then((res) => {
-    setFile_data(res.data);
-    //file_data = Array.from(res.data);
-    //tego formatu nie czyta
-  })
+  const [file_data, setFile_data] = useState('');
 
+  useEffect(() => {
+    axios.get(`http://localhost:3001/szafa/`)
+    .then((res) => {
+      setFile_data(res.data);
+    })
+  },[])
+ 
   return (
     <Router>
       <div className='App'>

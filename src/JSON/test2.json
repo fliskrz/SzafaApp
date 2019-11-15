@@ -1,0 +1,19 @@
+{
+    "columns": [
+        {"title": "Headings", "width": {"wpx": 80}},
+        {"title": "Text Style", "width": {"wch": 40}},
+        {"title": "Colors", "width": {"wpx": 90}}
+    ],
+    "data": [
+        [
+            {"value": "H1", "style": {"font": {"sz": "24", "bold": true}}},
+            {"value": "Bold", "style": {"font": {"bold": true}}},
+            {"value": "Red", "style": {"fill": {"patternType": "solid", "fgColor": {"rgb": "FFFF0000"}}}}
+        ],
+        [
+            {"value": "H2", "style": {"font": {"sz": "18", "bold": true}}},
+            {"value": "underline", "style": {"font": {"underline": true}}},
+            {"value": "Blue", "style": {"fill": {"patternType": "solid", "fgColor": {"rgb": "FF0000FF"}}}}
+        ]
+    ]
+}
