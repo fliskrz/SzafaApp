@@ -26,7 +26,7 @@ export default function Division(props) {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:3002/szafa/1/`)
+        axios.get(`http://localhost:3001/szafa/1/`)
             .then((res) => {
                 setData(res.data);  //to jest dobra ścieżka do elementu
                 
@@ -72,7 +72,7 @@ export default function Division(props) {
             data.data[props.id-1][i].style.fill.fgColor.rgb = "00FF00";
         }
 
-        axios.put(`http://localhost:3002/szafa/1/`, data)
+        axios.put(`http://localhost:3001/szafa/1/`, data)
             .then((res) => {
                 resolve(res.data)
             })
@@ -87,7 +87,7 @@ export default function Division(props) {
             data.data[props.id-1][i].style.fill.fgColor.rgb = "FF0000";
         }
 
-        axios.put(`http://localhost:3002/szafa/1/`, data)
+        axios.put(`http://localhost:3001/szafa/1/`, data)
             .then((res) => {
                 resolve(res.data)
             })
@@ -101,7 +101,7 @@ export default function Division(props) {
             data.data[props.id-1][i].style.fill.fgColor.rgb = "FFFF00";
         }
 
-        axios.put(`http://localhost:3002/szafa/1/`, data)
+        axios.put(`http://localhost:3001/szafa/1/`, data)
             .then((res) => {
                 resolve(res.data)
             })
@@ -111,58 +111,58 @@ export default function Division(props) {
 
     //editing the data in data popup and sending them to API
     const handleEdit = (e) => {
-        // let new_data = data;
-        // let wykorzystanie = document.createElement('input');
-        // let usługa = document.createElement('input');
-        // let uwagi = document.createElement('input');
-        // let submit = document.createElement('button');
-        // submit.innerText = 'Submit';
-        // let form = document.createElement('form');
-        // form.className = 'form';
-        // let label1 = document.createElement('label');
-        // label1.innerText = 'Wykorzystanie';
-        // let label2 = document.createElement('label');
-        // label2.innerText = 'Usługa';
-        // let label3 = document.createElement('label');
-        // label3.innerText = 'Uwagi';
-        // form.appendChild(label1);
-        // form.appendChild(wykorzystanie);
-        // form.appendChild(label2);
-        // form.appendChild(usługa);
-        // form.appendChild(label3);
-        // form.appendChild(uwagi);
-        // form.appendChild(submit);
-        // wykorzystanie.value = data.wykorzystanie;
-        // usługa.value = data.usługa;
-        // uwagi.value = data.uwagi;
-        // let edit = e.currentTarget;
-        // edit.parentElement.removeChild(edit.previousElementSibling);
-        // edit.parentElement.insertBefore(form, edit);
-        // edit.parentElement.removeChild(edit);
-        // form.addEventListener('submit', (e)=>{
-        //     e.preventDefault();
-        //     let p = document.createElement('p');
-        //     p.className = 'form';
-        //     let wykorzystanie_edit = document.createElement('p');
-        //     let usługa_edit = document.createElement('p');
-        //     let uwagi_edit = document.createElement('p');
-        //     wykorzystanie_edit.innerText = wykorzystanie.value;
-        //     usługa_edit.innerText = usługa.value;
-        //     uwagi_edit.innerText = uwagi.value;
-        //     new_data.wykorzystanie = wykorzystanie.value;
-        //     new_data.usługa = usługa.value;
-        //     new_data.uwagi = uwagi.value;
-        //     e.currentTarget.parentElement.appendChild(p);
-        //     e.currentTarget.nextElementSibling.appendChild(wykorzystanie_edit);
-        //     e.currentTarget.nextElementSibling.appendChild(usługa_edit);
-        //     e.currentTarget.nextElementSibling.appendChild(uwagi_edit);
-        //     e.currentTarget.parentElement.appendChild(edit);
-        //     e.currentTarget.parentElement.removeChild(e.currentTarget);
-        //     axios.put(`http://localhost:3001/szafa/${props.id}/`, new_data)
-        //     .then((res) => {
-        //         resolve(res.data)
-        //     })
-        // })
+        let new_data = data;
+        let wykorzystanie = document.createElement('input');
+        let usługa = document.createElement('input');
+        let uwagi = document.createElement('input');
+        let submit = document.createElement('button');
+        submit.innerText = 'Submit';
+        let form = document.createElement('form');
+        form.className = 'form';
+        let label1 = document.createElement('label');
+        label1.innerText = 'Wykorzystanie';
+        let label2 = document.createElement('label');
+        label2.innerText = 'Usługa';
+        let label3 = document.createElement('label');
+        label3.innerText = 'Uwagi';
+        form.appendChild(label1);
+        form.appendChild(wykorzystanie);
+        form.appendChild(label2);
+        form.appendChild(usługa);
+        form.appendChild(label3);
+        form.appendChild(uwagi);
+        form.appendChild(submit);
+        wykorzystanie.value = data.data[props.id-1][6].value;
+        usługa.value = data.data[props.id-1][7].value;
+        uwagi.value = data.data[props.id-1][8].value;
+        let edit = e.currentTarget;
+        edit.parentElement.removeChild(edit.previousElementSibling);
+        edit.parentElement.insertBefore(form, edit);
+        edit.parentElement.removeChild(edit);
+        form.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            let p = document.createElement('p');
+            p.className = 'form';
+            let wykorzystanie_edit = document.createElement('p');
+            let usługa_edit = document.createElement('p');
+            let uwagi_edit = document.createElement('p');
+            wykorzystanie_edit.innerText = wykorzystanie.value;
+            usługa_edit.innerText = usługa.value;
+            uwagi_edit.innerText = uwagi.value;
+            new_data.data[props.id-1][6].value = wykorzystanie.value;
+            new_data.data[props.id-1][7].value = usługa.value;
+            new_data.data[props.id-1][8].value = uwagi.value;
+            e.currentTarget.parentElement.appendChild(p);
+            e.currentTarget.nextElementSibling.appendChild(wykorzystanie_edit);
+            e.currentTarget.nextElementSibling.appendChild(usługa_edit);
+            e.currentTarget.nextElementSibling.appendChild(uwagi_edit);
+            e.currentTarget.parentElement.appendChild(edit);
+            e.currentTarget.parentElement.removeChild(e.currentTarget);
+            axios.put(`http://localhost:3001/szafa/1/`, new_data)
+            .then((res) => {
+                resolve(res.data)
+            })
+        })
     }
 
     //editing slot name in data popup and sending it to API
@@ -208,23 +208,23 @@ export default function Division(props) {
 
         return (
             <>
-                <button data-segment={props.segment_nr} data-row={props.row} data-slot={props.nr} onClick={handleClick} onMouseOver={handleHover} onMouseOut={handleOut} className={slot}>
-                    {props.nr <= 12 ? props.nr : props.nr - 12}
-                    <div className={hover}>{file[props.index].netscale[segment_nr].segment[props.nr-1].name}</div>
+                <button data-row={props.row} onClick={handleClick} onMouseOver={handleHover} onMouseOut={handleOut} className={slot}>
+                    {props.nr}
+                    <div className={hover}>{props.data.data[props.id-1][0].value}</div>
                 </button>
                 <div className={big_data}>
                     <div onClick={handleClose} style={styles}>X</div>
                     <p style={{backgroundColor: 'rgb(223, 226, 226)'}}>
-                        {props.nr <= 12 ? props.nr : props.nr - 12}{'.'}
-                        <span className='name'>&nbsp;{file[props.index].netscale[segment_nr].segment[props.nr-1].name}&nbsp;</span>
+                        {props.nr}{'.'}
+                        <span className='name'>&nbsp;{props.data.data[props.id-1][0].value}&nbsp;</span>
                         <button onClick={handleNameEdit} className='edit edit_name'></button>
                     </p>
                     <div className='data'>
                         {/* <p>{this.state.file[this.props.index].netscale[segment_nr].segment[this.props.nr-1].data}</p> */}
                         <div className='form'>
-                            <p>{data.wykorzystanie}</p>                     
-                            <p>{data.usługa}</p>
-                            <p>{data.uwagi}</p>
+                            <p>{props.data.data[props.id-1][6].value}</p>                     
+                            <p>{props.data.data[props.id-1][7].value}</p>
+                            <p>{props.data.data[props.id-1][8].value}</p>
                         </div>
                         <button onClick={handleEdit} className='edit'></button>
                     </div>
@@ -240,6 +240,6 @@ export default function Division(props) {
                 </>
         )
     }else{
-        return <h1>dupa</h1>
+        return null;
     }
 }

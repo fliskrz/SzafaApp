@@ -9,8 +9,6 @@ import {
   useRouteMatch,
   matchPath
 } from "react-router-dom";
-import axios from 'axios';
-import { ExportCSV } from './components/ExportCSV';
 import LinkButton from './components/LinkButton';
 import NotFound from './components/NotFound';
 import SzafaA1 from './components/SzafaA1';
@@ -25,17 +23,9 @@ export default function App() {
 
   const [file_data, setFile_data] = useState('');
 
-  useEffect(() => {
-    axios.get(`http://localhost:3001/szafa/`)
-    .then((res) => {
-      setFile_data(res.data);
-    })
-  },[])
- 
   return (
     <Router>
       <div className='App'>
-      <ExportCSV csvData={file_data} fileName='plik' />
         <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
           <Link className='logo' to="/"/>
           <div style={{display:'flex'}}>         

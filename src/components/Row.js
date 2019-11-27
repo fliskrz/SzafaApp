@@ -7,18 +7,18 @@ export default function Row(props) {
 
     const [data, setData] = useState('');
 
-    useEffect(() => {
-        axios.get(`http://localhost:3001/szafa/`)
-            .then((res) => {
-                setData(res.data);
-            })
-    },[])
+    // useEffect(() => {
+    //     axios.get(`http://localhost:3001/szafa/`)
+    //         .then((res) => {
+    //             setData(res.data);
+    //         })
+    // },[])
 
     let top = [],
         bot = [];
     for(let i=1; i<=12; i++){
-        top.push(<Division data={data} index={props.index} row={'top'} id={props.id+i} file={props.file} segment_nr={props.nr} nr={i} key={i}/>);
-        bot.push(<Division data={data} index={props.index} row={'bot'} id={12+props.id+i} file={props.file} segment_nr={props.nr} nr={i+12} key={i+12}/>);
+        top.push(<Division data={props.file} row={'top'} id={props.id+i} nr={i} key={i}/>);
+        bot.push(<Division data={props.file} row={'bot'} id={12+props.id+i} nr={i} key={i+12}/>);
     }
 
     return (
